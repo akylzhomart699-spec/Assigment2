@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Assignment 2 — Jomart Akylbek</title><link rel="stylesheet" href="report.css"></head><body>
+<section class="page">
+  <p class="kicker">Astana IT University · Web Technologies</p>
+  <h1>Advanced CSS.<br>Flexbox &amp; Grid.</h1>
+  <p>Assignment 2 · AKYL GROUP</p>
+  <div class="meta"><strong>Student:</strong> Jomart Akylbek<br><strong>Group:</strong> IT2507<br><strong>Date:</strong> 27 September 2026</div>
+  <h3>Project overview</h3>
+  <p>The assignment extends the existing real-estate website with three exercises: a geometric composition, a component library and an editorial page with three layouts. The new pages share a green palette, typography and spacing.</p>
+  <p>The implementation uses HTML and external CSS. There is no JavaScript, Bootstrap or media query in the assignment pages. Layouts adapt using fluid sizing, wrapping and intrinsic content sizes.</p>
+  <h3>Source code</h3>
+  <p><a href="https://github.com/akylzhomart699-spec/AKYL-GROUP">https://github.com/akylzhomart699-spec/AKYL-GROUP</a><br>Assignment directory: <code>assignment2/</code></p>
+  <h3>Contents</h3>
+  <p>1. Geometric composition and key CSS<br>2. Five Flexbox components and key CSS<br>3. Three layouts with identical markup and key CSS<br>4. Responsive checks and conclusion</p>
+</section>
+<section class="page">
+  <p class="kicker">Task 1 · Result</p><h2>One grid, seven blocks.</h2>
+  <p>A single Grid container has six equal columns and six equal rows. Each colored block occupies the cells required by the supplied drawing.</p>
+  <figure><img class="composition" src="report-assets/composition-detail.png" alt="Rendered geometric composition"><figcaption>Figure 1. Browser screenshot of the implemented composition.</figcaption></figure>
+  <table><thead><tr><th>Block</th><th>Rows occupied</th><th>Columns occupied</th></tr></thead><tbody><tr><td>Blue</td><td>1–3</td><td>1–2</td></tr><tr><td>Top white</td><td>1</td><td>3–6</td></tr><tr><td>Yellow</td><td>2–3</td><td>3–4</td></tr><tr><td>Right white</td><td>2–4</td><td>5–6</td></tr><tr><td>Red</td><td>4–6</td><td>1–3</td></tr><tr><td>Black</td><td>4–6</td><td>4</td></tr><tr><td>Bottom white</td><td>5–6</td><td>5–6</td></tr></tbody></table>
+</section>
+<section class="page">
+  <p class="kicker">Task 1 · Implementation</p><h2>Proportions that scale.</h2>
+  <figure><img class="code" src="report-assets/key-composition.png" alt="Screenshot of key composition CSS declarations"><figcaption>Figure 2. Key declarations from composition.css; block colors omitted.</figcaption></figure>
+  <p><code>aspect-ratio: 1</code> keeps the composition square. Its width is limited to the smaller of the available space and <code>88vmin</code>, so the square cannot become taller than the viewport.</p>
+  <p>The black container background is visible through the Grid gaps. The blocks do not use borders or margins to create internal lines. Matching container padding creates the outside frame.</p>
+  <p>The four numbers in <code>grid-area</code> specify row start, column start, row end and column end. End lines are exclusive: the blue block ends at row line 4 and therefore covers three rows.</p>
+</section>
+<section class="page">
+  <p class="kicker">Task 2 · Components 1–2</p><h2>Navigation and cards.</h2>
+  <figure><img class="result" src="report-assets/component-1.png" alt="Navigation component"><figcaption>Figure 3. A logo, long links and a right-aligned action group.</figcaption></figure>
+  <p>The navigation is a wrapping Flexbox row. Links can grow, while an automatic start margin moves the action group to the right edge, including when it wraps.</p>
+  <figure><img class="result" src="report-assets/component-2.png" alt="Three equal-height property cards"><figcaption>Figure 4. Different description lengths, equal card heights and aligned buttons.</figcaption></figure>
+  <p>Cards stretch to the height of the tallest card in each row. Each card body is a growing vertical Flexbox container. The button's automatic top margin consumes unused space, so all buttons align without a fixed card height.</p>
+</section>
+<section class="page">
+  <p class="kicker">Task 2 · Components 3–5</p><h2>Small details, flexible layouts.</h2>
+  <figure><img class="result" src="report-assets/component-3.png" alt="Centered pagination with count at right"><figcaption>Figure 5. Centered page links and a right-aligned result count.</figcaption></figure>
+  <p>Equal flexible regions on both sides center the page controls. The result count occupies the right region; the parts may wrap on narrow screens.</p>
+  <figure><img class="result" src="report-assets/component-4.png" alt="Comment text alongside avatar"><figcaption>Figure 6. Text remains beside the avatar.</figcaption></figure>
+  <p>The avatar does not shrink. The text has its own flexible child with a zero minimum inline size and long-word wrapping, so it never flows underneath the avatar.</p>
+  <figure><img class="result" src="report-assets/component-5.png" alt="Three plans with taller recommended middle plan"><figcaption>Figure 7. The recommended plan is naturally taller than its neighbors.</figcaption></figure>
+  <p>The pricing row vertically centers its cards. The middle card has an extra badge, feature and vertical padding; its height comes from content rather than a fixed value.</p>
+</section>
+<section class="page">
+  <p class="kicker">Task 2 · Key CSS, part 1</p><h2>Wrapping and alignment.</h2>
+  <figure><img class="code" src="report-assets/key-components-a.png" alt="Screenshot of key navigation and card CSS"><figcaption>Figure 8. Layout declarations from components.css.</figcaption></figure>
+  <p><code>flex: 1 1 17rem</code> is a flexible preferred size: cards may grow or shrink. It is not a fixed width. <code>align-items: stretch</code> equalizes heights within each row.</p>
+  <p>All five components share <code>shared.css</code> for design tokens and <code>components.css</code> for their layout rules. Grid, floats and fixed layout widths or heights are not used in these components. Only the avatar has a fixed size.</p>
+</section>
+<section class="page">
+  <p class="kicker">Task 2 · Key CSS, part 2</p><h2>Let content set the size.</h2>
+  <figure><img class="code" src="report-assets/key-components-b.png" alt="Screenshot of pagination comment and pricing CSS"><figcaption>Figure 9. The remaining Flexbox layout declarations.</figcaption></figure>
+  <p>The pagination's empty pseudo-element balances the result count on wide screens. The comment uses separate avatar and text flex items. Pricing uses natural heights and center alignment.</p>
+  <p>Shared spacing variables keep gaps and padding consistent. Colors, fonts and button styles are reused rather than restyled independently for each exercise.</p>
+</section>
+<section class="page">
+  <p class="kicker">Task 3 · Card grid</p><h2>Twelve stories, one markup.</h2>
+  <p>The page contains twelve articles with different title and description lengths. Each article contains an image, a text body and a date.</p>
+  <figure><img class="result" src="report-assets/layouts-detail.png" alt="Desktop grid layout excerpt"><figcaption>Figure 10. Upper portion of the card-grid view at a 1200 px viewport.</figcaption></figure>
+  <p><strong>Tool:</strong> Grid uses <code>repeat(auto-fit, minmax(min(100%, 19rem), 1fr))</code> to choose the column count, while Flexbox organizes each card's content vertically.</p>
+  <p>The inner <code>min()</code> allows a track to fit a narrow container instead of forcing horizontal overflow.</p>
+</section>
+<section class="page">
+  <p class="kicker">Task 3 · Compact list</p><h2>The same stories, in rows.</h2>
+  <figure><img class="result" src="report-assets/layouts-list-detail.png" alt="Desktop list layout excerpt"><figcaption>Figure 11. Upper portion of the compact-list view at a 1200 px viewport.</figcaption></figure>
+  <p><strong>Tool:</strong> A single-column Grid stacks the articles; inside each item, a horizontal Flexbox row places the image left, text in the middle and date at the right edge.</p>
+  <p>The image uses a proportional width. The body can shrink and wrap, while the date keeps a small readable area. No changes to the article HTML are needed.</p>
+</section>
+<section class="page">
+  <p class="kicker">Task 3 · Magazine</p><h2>A lead story sets the rhythm.</h2>
+  <figure><img class="result" src="report-assets/layouts-magazine-detail.png" alt="Desktop magazine with lead spanning columns and rows"><figcaption>Figure 12. Upper portion of the magazine view at a 1200 px viewport.</figcaption></figure>
+  <p><strong>Tool:</strong> Grid lets the first item span two columns and two rows, while Flexbox structures the content inside each article.</p>
+  <p>The track minimum can shrink to half the available width. On narrow screens the lead occupies both columns; on wide screens additional columns appear and smaller stories fill the space beside it.</p>
+</section>
+<section class="page">
+  <p class="kicker">Task 3 · Key CSS</p><h2>Change a class, keep the HTML.</h2>
+  <figure><img class="code" src="report-assets/key-layouts.png" alt="Screenshot of the three layout CSS modes"><figcaption>Figure 13. Key declarations from layouts.css.</figcaption></figure>
+  <p>Change the container class from <code>journal layout-grid</code> to <code>journal layout-list</code> or <code>journal layout-magazine</code>. All twelve articles remain untouched.</p>
+  <p>Three static demonstration files make each mode accessible without JavaScript. A file comparison confirmed they are identical except for this single class value.</p>
+</section>
+<section class="page">
+  <p class="kicker">Responsive checks</p><h2>From desktop to phone.</h2>
+  <div class="phones"><figure><img src="report-assets/layouts-mobile-detail.png" alt="Card grid on narrow screen"><figcaption>Card grid, 390 px.</figcaption></figure><figure><img src="report-assets/layouts-list-mobile-detail.png" alt="List on narrow screen"><figcaption>Compact list, 390 px.</figcaption></figure><figure><img src="report-assets/layouts-magazine-mobile-detail.png" alt="Magazine on narrow screen"><figcaption>Magazine, 390 px.</figcaption></figure></div>
+  <p>These screenshots show the upper portion of each layout at a narrow viewport. The same rules are used at every width; no media queries are needed.</p>
+  <table><thead><tr><th>Browser check</th><th>Result</th></tr></thead><tbody><tr><td>All five pages at 1440, 390 and 320 px</td><td>No horizontal overflow</td></tr><tr><td>Images on every page</td><td>All loaded</td></tr><tr><td>Composition dimensions</td><td>Square; within viewport height</td></tr><tr><td>Cards at desktop width</td><td>Equal heights; aligned buttons</td></tr><tr><td>Recommended pricing plan</td><td>Taller than adjacent plans</td></tr><tr><td>Articles in every layout</td><td>12; identical markup</td></tr></tbody></table>
+  <h3>Conclusion</h3>
+  <p>The exercises show how Grid handles two-dimensional placement and how Flexbox handles alignment and distribution along one axis. Fluid track sizes, wrapping, automatic margins and content-driven heights make layouts respond to both screen size and changing text.</p>
+</section>
+</body></html>

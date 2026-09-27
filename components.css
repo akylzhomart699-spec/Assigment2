@@ -1,0 +1,35 @@
+/* Task 2: every component uses Flexbox; bases are flexible, never fixed widths. */
+.component-section { margin-block-end: 3rem; }
+.section-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2); margin-block-end: var(--space-3); }
+.section-heading span { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; }
+.demo-nav { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); padding: var(--space-3); border: 1px solid var(--line); border-radius: .6rem; background: var(--surface); }
+.demo-nav .brand { flex: 0 1 auto; }
+.nav-links { display: flex; flex: 1 1 20em; flex-wrap: wrap; gap: var(--space-2); }
+.nav-links a { text-decoration: none; overflow-wrap: anywhere; }
+.nav-actions { display: flex; flex-wrap: wrap; gap: var(--space-1); margin-inline-start: auto; justify-content: flex-end; }
+.cards { display: flex; flex-wrap: wrap; align-items: stretch; gap: var(--space-3); }
+.property-card { display: flex; flex-direction: column; flex: 1 1 17rem; min-inline-size: 0; background: var(--surface); border: 1px solid var(--line); border-radius: .6rem; overflow: hidden; }
+.property-card > img { inline-size: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.card-content { display: flex; flex-direction: column; flex: 1; gap: var(--space-2); padding: var(--space-3); }
+.card-content p { color: var(--muted); }
+.card-content .button { margin-block-start: auto; align-self: flex-start; }
+.pagination { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); background: var(--surface); border: 1px solid var(--line); border-radius: .6rem; padding: var(--space-3); }
+.pagination::before { content: ""; flex: 1 1 8rem; }
+.page-numbers { display: flex; flex: 0 1 auto; flex-wrap: wrap; justify-content: center; gap: var(--space-1); }
+.page-numbers a { display: flex; align-items: center; justify-content: center; padding: .45em .8em; border-radius: .3rem; text-decoration: none; background: var(--paper); }
+.page-numbers [aria-current="page"] { background: var(--accent); color: white; }
+.result-count { flex: 1 1 8rem; text-align: end; color: var(--muted); font-size: .875rem; }
+.comment { display: flex; align-items: flex-start; gap: var(--space-2); padding: var(--space-3); border: 1px solid var(--line); border-radius: .6rem; background: var(--surface); }
+.avatar { display: flex; align-items: center; justify-content: center; flex: 0 0 3rem; inline-size: 3rem; block-size: 3rem; border-radius: 50%; background: var(--tint); color: var(--accent); font-weight: 700; }
+.comment-body { flex: 1; min-inline-size: 0; overflow-wrap: anywhere; }
+.comment-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-1); margin-block-end: var(--space-1); }
+.comment-meta time { color: var(--muted); font-size: .8rem; }
+.pricing { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+.plan { display: flex; flex: 1 1 17rem; flex-direction: column; gap: var(--space-3); min-inline-size: 0; padding: var(--space-3); background: var(--surface); border: 1px solid var(--line); border-radius: .6rem; }
+.plan.recommended { padding-block: 2.5rem; background: var(--ink); color: white; border-color: var(--ink); }
+.plan ul { padding-inline-start: 1.2em; margin: 0; }
+.plan li + li { margin-block-start: var(--space-1); }
+.plan-price { font-size: 2rem; font-weight: 700; letter-spacing: -.04em; }
+.plan-price small { font-size: .8rem; font-weight: 400; letter-spacing: normal; }
+.badge { align-self: flex-start; background: #d8edb6; color: var(--ink); padding: .3em .8em; border-radius: 2em; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
+.recommended .button { background: #d8edb6; border-color: #d8edb6; color: var(--ink); }

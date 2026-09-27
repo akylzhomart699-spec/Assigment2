@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Key CSS</title><style>body{margin:0;padding:32px;background:#172c26;color:#e7efe6}h1{font:700 22px Arial;color:#d8edb6}pre{font:20px/1.55 Consolas,monospace;white-space:pre-wrap}</style></head><body><h1>key-layouts · key declarations (visual styling omitted)</h1><pre>.journal { display: grid; gap: var(--space-4); }
+.journal-item { display: flex; flex-direction: column; }
+.story-body { display: flex; flex-direction: column; flex: 1; }
+.layout-grid {
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+}
+.layout-list { grid-template-columns: minmax(0, 1fr); }
+.layout-list .journal-item {
+  flex-direction: row;
+  align-items: center;
+}
+.layout-list .journal-item > img { flex: 0 0 21%; }
+.layout-list .journal-item > time { margin-inline-start: auto; }
+.layout-magazine {
+  grid-template-columns: repeat(auto-fit,
+    minmax(min(calc((100% - var(--space-4)) / 2), 14rem), 1fr));
+  grid-auto-flow: row dense;
+}
+.layout-magazine .journal-item:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}</pre></body></html>

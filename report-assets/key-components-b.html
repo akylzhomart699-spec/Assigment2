@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Key CSS</title><style>body{margin:0;padding:32px;background:#172c26;color:#e7efe6}h1{font:700 22px Arial;color:#d8edb6}pre{font:20px/1.55 Consolas,monospace;white-space:pre-wrap}</style></head><body><h1>key-components-b · key declarations (visual styling omitted)</h1><pre>.pagination { display: flex; flex-wrap: wrap; }
+.pagination::before { content: ""; flex: 1 1 8rem; }
+.page-numbers {
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.result-count { flex: 1 1 8rem; text-align: end; }
+.comment { display: flex; align-items: flex-start; }
+.avatar { flex: 0 0 3rem; inline-size: 3rem; block-size: 3rem; }
+.comment-body {
+  flex: 1;
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+.pricing { display: flex; flex-wrap: wrap; align-items: center; }
+.plan { display: flex; flex: 1 1 17rem; flex-direction: column; }
+.plan.recommended { padding-block: 2.5rem; }</pre></body></html>
