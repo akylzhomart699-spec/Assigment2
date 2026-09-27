@@ -4,7 +4,7 @@
 
 Open `index.html` directly in a browser. No installation or server is needed.
 
-Report: [Assignment2_Jomart_Akylbek.pdf](Assignment2_Jomart_Akylbek.pdf). The editable report source is [Assignment2_Jomart_Akylbek.html](Assignment2_Jomart_Akylbek.html); print it to PDF with browser headers and footers disabled after editing.
+Report: [Assignment2_Jomart_Akylbek.docx](Assignment2_Jomart_Akylbek.docx). Open and edit the report in Microsoft Word; screenshots are embedded in the document.
 
 - `index.html` + `composition.css`: seven blocks in a single 6 × 6 Grid, matching the PDF reference.
 - `components.html` + `components.css`: five Flexbox components.
@@ -17,11 +17,11 @@ No Bootstrap, JavaScript, media queries, floats or absolute positioning are used
 
 ## Before submission
 
-The PDF report includes screenshots and draft explanations. Review the explanations, rewrite them in your own words, and make sure you can explain the code at the defense. The assignment requires an individual defense and an independent live coding exercise.
+The Word report includes screenshots and draft explanations. Review the explanations, rewrite them in your own words, and make sure you can explain the code at the defense. The assignment requires an individual defense and an independent live coding exercise.
 
 Repository: https://github.com/akylzhomart699-spec/Assigment2
 
-When updating the assignment, commit and push the source and regenerated report together.
+When updating the assignment, commit and push the source and updated Word report together.
 
 ## Defense notes
 
